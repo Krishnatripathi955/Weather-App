@@ -5,19 +5,27 @@
     <title>Weather App</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <div class="card">
+
+        <!-- Website Name -->
+        <h2 class="app-title">Weather App</h2>
+
         <div class="search">
             <input type="text" placeholder="Enter city name" spellcheck="false">
             <button><img src="images/search.png" alt="search"></button>
         </div>
+
         <div class="error" style="display:none;">
             <p>Invalid city name</p>
         </div>
+
         <div class="weather" style="display:none;">
             <img src="images/rain.png" class="weather-icon" alt="weather">
             <h1 class="temp">22°C</h1>
             <h2 class="city">New York</h2>
+
             <div class="details">
                 <div class="col">
                     <img src="images/humidity.png" alt="humidity">
@@ -37,7 +45,7 @@
         </div>
     </div>
 
-    <script>
+<script>
   const apiKey = "d92433a858d894cb82a122c19831b86d";
   const apiUrl = "https://api.openweathermap.org/data/2.5/weather?units=metric&q=";
 
@@ -62,7 +70,6 @@
 
       const condition = data.weather[0].main;
 
-      // Set appropriate icon
       if (condition === "Clouds") {
         weatherIcon.src = "images/cloud.png";
         card.style.background = "linear-gradient(135deg, #d7d2cc, #304352)";
